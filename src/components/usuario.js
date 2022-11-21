@@ -32,10 +32,10 @@ function User(props) {
   return (
 
     <div data-test="user" class="usuario">
-      <img data-test="profile-image" onClick={trocarFoto} src={imagem} />
+      <img data-test="profile-image" onClick={trocarFoto} src={!imagem? `assets/img/catanacomics.svg`: imagem}  />
       <div class="texto">
         <strong data-test="name"> {props.texto}</strong>
-        <span> {texto2}
+        <span>  {!texto2? "Catana":texto2}
           <ion-icon data-test="edit-name" onClick={trocarNome} name="pencil"> </ion-icon> </span>
 
       </div>
