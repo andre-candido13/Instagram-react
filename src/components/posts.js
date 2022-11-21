@@ -9,7 +9,7 @@ export default function Posts() {
 
   const [post, setPost] = useState("bookmark-outline")
   const [likes, setLike] = useState("heart-outline")
-  const [redLike, setRed] = useState("")
+  const [redLike, setRed] = useState("heart")
 
 
 
@@ -19,6 +19,13 @@ export default function Posts() {
     { user: "barked", imagem: "assets/img/barked.svg", imagem2: "assets/img/dog.svg", imagem3: "assets/img/respondeai.svg", curtida: "Curtido por adorable_animals e outras 99.159 pessoas" }
   ]
 
+  function teste () {
+    if (likes==="heart-outline") {
+      setLike("heart")
+    } else {
+      setLike("heart-outline")
+    }
+  }
 
 
   return (
@@ -38,13 +45,13 @@ export default function Posts() {
 
 
             <div class="conteudo">
-              <img data-test="like-post" name={likes} onClick={() => likes === "heart-outline" ? setLike("heart") : setLike("heart-outline")}src={otim.imagem2} />
+              <img data-test="like-post" name={likes} onClick={teste} class={likes}src={otim.imagem2} />
             </div>
 
             <div class="fundo">
               <div class="acoes">
                 <div>
-                <ion-icon name={likes} onClick={() => likes === "heart-outline" ? setLike ("heart") : setLike("heart-outline")}> </ion-icon>
+                <ion-icon name={likes} onClick={teste} class={likes}> </ion-icon>
                   <ion-icon name="chatbubble-outline"></ion-icon>
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
