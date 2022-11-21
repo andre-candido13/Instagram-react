@@ -22,13 +22,13 @@ export default function Posts() {
 
 
   return (
-    <div>
+    <div data-test="post" >
       {otimizacao.map((otim) =>
         <div>
-          <div class="post">
+          <div class="post" >
             <div class="topo">
               <div class="usuario">
-                <img src={otim.imagem} />
+                <img data-test="post" src={otim.imagem} />
                 {otim.user}
               </div>
               <div class="acoes">
@@ -38,7 +38,7 @@ export default function Posts() {
 
 
             <div class="conteudo">
-              <img name={likes} onClick={() => likes === "heart-outline" ? setLike("heart") : setLike("heart-outline")}src={otim.imagem2} />
+              <img data-test="like-post" name={likes} onClick={() => likes === "heart-outline" ? setLike("heart") : setLike("heart-outline")}src={otim.imagem2} />
             </div>
 
             <div class="fundo">
@@ -49,7 +49,7 @@ export default function Posts() {
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
                 <div>
-                  <ion-icon name={post} onClick={() => post === "bookmark-outline" ? setPost("bookmark") : setPost("bookmark-outline")}> </ion-icon>
+                  <ion-icon data-test="save-post" name={post} onClick={() => post === "bookmark-outline" ? setPost("bookmark") : setPost("bookmark-outline")}> </ion-icon>
                 </div>
               </div>
 

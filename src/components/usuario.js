@@ -31,12 +31,12 @@ function User(props) {
 
   return (
 
-    <div class="usuario">
-      <img onClick={trocarFoto} src={imagem} />
+    <div data-test="user" class="usuario">
+      <img data-test="profile-image" onClick={trocarFoto} src={imagem} />
       <div class="texto">
-        <strong>{props.texto}</strong>
+        <strong data-test="name"> {props.texto}</strong>
         <span> {texto2}
-          <ion-icon onClick={trocarNome} name="pencil"> </ion-icon> </span>
+          <ion-icon data-test="edit-name" onClick={trocarNome} name="pencil"> </ion-icon> </span>
 
       </div>
     </div>
